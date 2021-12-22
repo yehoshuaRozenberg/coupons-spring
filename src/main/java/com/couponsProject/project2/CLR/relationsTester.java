@@ -24,12 +24,12 @@ public class relationsTester implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         createData.createCompany();
-        createData.createCoupons();
+      //  createData.createCoupons();
         createData.createCustomers();
-        createData.createCouponsPurchases();
+      //  createData.createCouponsPurchases();
 
-        System.out.println(companyRepo.findById(1).getCoupons());
-        System.out.println(companyService.getCompanyCoupons(1));
+     //   System.out.println(companyRepo.findById(1).getCoupons());
+   //     System.out.println(companyService.getCompanyCoupons(1));
 
         //delete coupon by company
         // || by category

@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
  */
 
 @RestController
-@RequestMapping("couponsProject/customer")  //http://localhost:8080/
+@RequestMapping("customer")  //http://localhost:8080/
 @RequiredArgsConstructor
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 //@CrossOrigin(origins = "http://localhost:3000", allowedHeaders = "*")

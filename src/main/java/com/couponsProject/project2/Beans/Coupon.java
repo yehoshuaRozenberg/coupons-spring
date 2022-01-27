@@ -32,6 +32,7 @@ public class Coupon {
     @Enumerated(EnumType.ORDINAL)
     private Category categoryID;
     private String title;
+    private String discount;
     private String description;
     private Date startDate;
     private Date endDate;

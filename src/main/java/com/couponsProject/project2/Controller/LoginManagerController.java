@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
  */
 
 @RestController
-@RequestMapping("couponsProject/loginManager")  //http://localhost:8080/
+@RequestMapping("loginManager")  //http://localhost:8080/
 @RequiredArgsConstructor
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class LoginManagerController {

@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
  */
 
 @RestController
-@RequestMapping("couponsProject/company")  //http://localhost:8080/
+@RequestMapping("company")  //http://localhost:8080/
 @RequiredArgsConstructor
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class CompanyServiceController {

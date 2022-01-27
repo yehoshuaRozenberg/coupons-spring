@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -37,5 +38,16 @@ public class Customer {
 //           inverseJoinColumns = @JoinColumn(name="customer_id", referencedColumnName = "id")
 //   )
    private List<Coupon> coupons;
+
+
+    public List<Coupon> getCoupons() {
+        if(coupons==null) {
+            List<Coupon> c = Arrays.asList();
+            System.out.println("in get coupons if");
+            return c;
+        }else System.out.println("in get coupons");
+        return coupons;
+    }
+
 
 }

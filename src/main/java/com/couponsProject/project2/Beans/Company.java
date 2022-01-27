@@ -37,4 +37,5 @@ public class Company {
     @JoinColumn(name = "companyID")
     private List<Coupon> coupons;
 
+
 }

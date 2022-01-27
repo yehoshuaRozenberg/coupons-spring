@@ -32,24 +32,23 @@ public class CustomerService extends ClientService {
         return customerRepo.findByEmail(email).getId();
     }
 
-    public void purchaseCoupon(Coupon coupon, int id) throws IllegalRequestException {
-        if (getCustomerCoupons(id).stream().map(Coupon::getId).collect(Collectors.toList()).contains(coupon.getId())) {
-            throw new IllegalRequestException("purchase exists, cant buy same coupon twice");
-        }
-        if (couponRepo.findById(coupon.getId()).getAmount() <= 0) {
-            throw new IllegalRequestException("amount is zero, cant complete purchase");
-        }
-        if (couponRepo.findById(coupon.getId()).getEndDate().before(Date.valueOf(LocalDate.now()))) {
-            throw new IllegalRequestException("coupon end date passed, cant complete purchase");
-        }
-        Customer customer = customerRepo.findById(id);
-        customer.getCoupons().add(coupon);
-        customerRepo.save(customer);
-        Coupon coupon1 = couponRepo.findById(coupon.getId());
-        coupon1.setAmount(couponRepo.findById(coupon.getId()).getAmount() - 1);
-        couponRepo.saveAndFlush(coupon1);
-        System.out.println("purchase completed");
-
+   public void purchaseCoupon(Coupon coupon, int id) throws IllegalRequestException {
+           if (getCustomerCoupons(id).stream().map(Coupon::getId).collect(Collectors.toList()).contains(coupon.getId())) {
+               throw new IllegalRequestException("purchase exists, cant buy same coupon twice");
+       }
+       if (couponRepo.findById(coupon.getId()).getAmount() <= 0) {
+           throw new IllegalRequestException("amount is zero, cant complete purchase");
+       }
+       if (couponRepo.findById(coupon.getId()).getEndDate().before(Date.valueOf(LocalDate.now()))) {
+           throw new IllegalRequestException("coupon end date passed, cant complete purchase");
+       }
+       Customer customer = customerRepo.findById(id);
+       customer.getCoupons().add(coupon);
+       customerRepo.save(customer);
+       Coupon coupon1 = couponRepo.findById(coupon.getId());
+       coupon1.setAmount(couponRepo.findById(coupon.getId()).getAmount() - 1);
+       couponRepo.saveAndFlush(coupon1);
+       System.out.println("purchase completed");
     }
 
 

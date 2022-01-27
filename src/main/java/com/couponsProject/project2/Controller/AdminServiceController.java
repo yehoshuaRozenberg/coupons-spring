@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
  * controller class to externalize AdminService methods by REST
  */
 @RestController
-@RequestMapping("couponsProject/admin")  //http://localhost:8080/
+@RequestMapping("admin")  //http://localhost:8080/
 @RequiredArgsConstructor
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class AdminServiceController {
